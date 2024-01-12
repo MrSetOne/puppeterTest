@@ -17,6 +17,7 @@ router.get('/generate', async (req, res) => {
         });
         res.send(pdf);
     } catch (error) {
+        console.error(error);
         res.status(500).send('Error generating PDF');
     }
 });

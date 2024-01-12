@@ -4,7 +4,7 @@ const util = require('util');
 
 async function generatePDF() {
   console.log('starting puppeteer');
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({headless: 'new'});
   const page = await browser.newPage();
 
   await page.setContent(await generateHTML(), { waitUntil: 'networkidle0' });
